@@ -1,7 +1,6 @@
 import { app, BrowserWindow, shell, ipcMain } from 'electron'
 import { release } from 'node:os'
 import { join } from 'node:path'
-import { update } from './update'
 
 // The built directory structure
 //
@@ -73,9 +72,6 @@ async function createWindow() {
     if (url.startsWith('https:')) shell.openExternal(url)
     return { action: 'deny' }
   })
-
-  // Apply electron-updater
-  update(win)
 }
 
 app.whenReady().then(createWindow)
@@ -101,21 +97,3 @@ app.on('activate', () => {
     createWindow()
   }
 })
-
-// New window example arg: new windows url
-ipcMain.handle('open-win', (_, arg) => {
-  const childWindow = new BrowserWindow({
-    webPreferences: {
-      preload,
-      nodeIntegration: true,
-      contextIsolation: false,
-    },
-  })
-
-  if (process.env.VITE_DEV_SERVER_URL) {
-    childWindow.loadURL(`${url}#${arg}`)
-  } else {
-    childWindow.loadFile(indexHtml, { hash: arg })
-  }
-})
-
