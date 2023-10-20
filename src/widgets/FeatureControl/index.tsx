@@ -16,7 +16,7 @@ const FeatureControl: React.FC<Props> = ({ label, icon, control, controlLabel })
   <Paper sx={{ display: 'flex', minHeight: 90, justifyContent: 'space-between' }} elevation={ 3 }>
     <Box sx={{ display: 'flex', alignItems: 'center', ml: 2 }}>
       <Box sx={{ display: 'flex', gap: 4, alignItems: 'center' }}>
-        { icon }
+        <React.Fragment>{ icon }</React.Fragment>
         <Typography variant='subtitle1'>{ label }</Typography>
       </Box>
     </Box>

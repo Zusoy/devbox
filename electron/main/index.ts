@@ -1,4 +1,4 @@
-import { app, BrowserWindow, shell, ipcMain } from 'electron'
+import { app, BrowserWindow, shell, ipcMain, clipboard } from 'electron'
 import { release } from 'node:os'
 import { join } from 'node:path'
 
@@ -96,4 +96,8 @@ app.on('activate', () => {
   } else {
     createWindow()
   }
+})
+
+ipcMain.handle('copy', (_event, arg) => {
+  clipboard.writeText(arg)
 })

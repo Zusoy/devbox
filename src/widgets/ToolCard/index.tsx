@@ -7,10 +7,14 @@ interface Props {
   readonly icon: React.ReactElement
   readonly title: string
   readonly description: string
+  readonly onClick: React.MouseEventHandler
 }
 
-const ToolCard: React.FC<Props> = ({ icon, title, description }) =>
-  <Paper sx={{ pt: 5, pb: 5, pr: 2, pl: 2 }}>
+const ToolCard: React.FC<Props> = ({ icon, title, description, onClick }) =>
+  <Paper
+    onClick={ onClick }
+    sx={{ pt: 5, pb: 5, pr: 2, pl: 2, cursor: 'pointer', '&:hover': { boxShadow: 10 }} }
+  >
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
       <Paper elevation={ 2 } sx={{ padding: 4 }}>{ icon }</Paper>
       <Box>
