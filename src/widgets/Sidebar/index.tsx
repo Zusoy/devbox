@@ -56,7 +56,7 @@ const Sidebar: React.FC<Props> = ({ open, toggleSidebar, children }) =>
       </IconButton>
     </Toolbar>
     <Divider />
-    <List>
+    <List component='nav'>
       <Link
         icon={ <HomeIcon /> }
         label={ 'All tools' }

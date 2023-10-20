@@ -1,5 +1,6 @@
 const routes = {
-  homepage: () => '/'
+  homepage: () => '/',
+  uuidGenerator: () => '/uuid',
 }
 
 export type AppRoutes = typeof routes

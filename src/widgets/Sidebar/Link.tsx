@@ -1,5 +1,5 @@
 import React from 'react'
-import { redirect } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
@@ -12,9 +12,11 @@ interface Props {
 }
 
 const Link: React.FC<Props> = ({ label, to, icon }) => {
+  const navigate = useNavigate()
+
   return (
     <ListItem sx={{ display: 'flex' }} disablePadding>
-      <ListItemButton onClick={ () => redirect(to) }>
+      <ListItemButton onClick={ () => navigate(to) }>
         <ListItemIcon>
           { icon }
         </ListItemIcon>
