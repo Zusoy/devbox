@@ -24,7 +24,10 @@
     "@mui/icons-material": "^5.14.14",
     "@mui/material": "^5.14.14",
     "@types/uuid": "^9.0.6",
+    "@uiw/codemirror-theme-github": "^4.21.20",
+    "@uiw/react-codemirror": "^4.21.20",
     "electron-updater": "^6.1.1",
+    "lorem-ipsum": "^2.0.8",
     "react-router-dom": "^6.17.0",
     "uuid": "^9.0.1"
   },
