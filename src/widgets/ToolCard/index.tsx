@@ -13,7 +13,7 @@ interface Props {
 const ToolCard: React.FC<Props> = ({ icon, title, description, onClick }) =>
   <Paper
     onClick={ onClick }
-    sx={{ pt: 5, pb: 5, pr: 2, pl: 2, cursor: 'pointer', '&:hover': { boxShadow: 10 }} }
+    sx={{ maxWidth: 150, pt: 5, pb: 5, pr: 2, pl: 2, cursor: 'pointer', '&:hover': { boxShadow: 10 }}}
   >
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
       <Paper elevation={ 2 } sx={{ padding: 4 }}>{ icon }</Paper>

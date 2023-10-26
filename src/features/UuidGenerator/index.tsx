@@ -45,7 +45,7 @@ const UuidGenerator: React.FC = () => {
   return (
     <Container fixed>
       <Typography variant='h5'>UUID Generator</Typography>
-      <Box component='div' sx={{ display: 'flex', flexDirection: 'column', paddingTop: 2 }}>
+      <Box component='div' sx={{ display: 'flex', flexDirection: 'column', pt: 2 }}>
         <Typography variant='h6'>Configuration</Typography>
         <Controls
           uppercaseEnabled={ uppercaseEnabled }
